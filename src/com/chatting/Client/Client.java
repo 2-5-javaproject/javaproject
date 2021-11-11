@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Client {
     private static final String SERVER_IP = "192.168.219.107";
     private static final int SERVER_PORT = 9090;
-
+    private String test;
 //    String name = null;
 //    Scanner scanner = new Scanner(System.in);
 //
