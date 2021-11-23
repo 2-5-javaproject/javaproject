@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Signup</title>
 </head>
 <body>
-
+    <h1>회원가입</h1>
+    <form>
+        <label for="user">아이디</label>
+        <input type="text" name="user" id="user">
+        <label for="password">비밀번호</label>
+        <input type="text" name="password" id="password">
+        <label for="name">닉네임</label>
+        <input type="text" name="name" id="name">
+    </form>
 </body>
 </html>
