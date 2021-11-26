@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-
+    <div class="login_box">
+        <h3 class="login_tit"></h3>
+        <input type="text" class="login_id" placeholder="아이디" name="id" maxlength="15">
+        <input type="text" class="login_pw" placeholder="비밀번호" name="password" maxlength="15">
+        <input type="submit" class="login_btn" placeholder="로그인버튼" value="회원가입">
+    </div>
 </body>
 </html>
