@@ -52,4 +52,7 @@
         inputMessage.value = "";
     }
 </script>
+<script>
+    <%--   Jquery 공간--%>
+</script>
 </html>

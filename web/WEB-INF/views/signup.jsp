@@ -20,4 +20,7 @@
         <input class="sign_btn" placeholder="회원가입"type="submit" value="Sign up">
     </form>
 </body>
+<script>
+    <%--   Jquery 공간--%>
+</script>
 </html>
