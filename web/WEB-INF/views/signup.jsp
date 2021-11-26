@@ -11,14 +11,13 @@
     <title>Signup</title>
 </head>
 <body>
-    <h1>회원가입</h1>
+    <h1></h1>
     <form method="post" action="">
-        <label for="user">아이디</label>
-        <input type="text" name="user" id="user">
-        <label for="password">비밀번호</label>
-        <input type="text" name="password" id="password">
-        <label for="name">닉네임</label>
-        <input type="text" name="name" id="name">
+        <h3 class="sign_tit">Sign up</h3>
+        <input class="sign_id"placeholder="아이디"type="text" name="user" id="user">
+        <input class="sign_pw"placeholder="비밀번호"type="text" name="password" id="password">
+        <input class="sign_name"placeholder="이름" type="text" name="name" id="name">
+        <input class="sign_btn" placeholder="회원가입"type="submit" value="Sign up">
     </form>
 </body>
 </html>
