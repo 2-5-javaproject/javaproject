@@ -17,8 +17,8 @@
         <input type="text" name="user" id="user">
         <label for="password">비밀번호</label>
         <input type="text" name="password" id="password">
-        <label for="name">닉네임</label>
-        <input type="text" name="name" id="name">
+        <label for="nickname">닉네임</label>
+        <input type="text" name="nickname" id="nickname">
     </form>
 </body>
 </html>
