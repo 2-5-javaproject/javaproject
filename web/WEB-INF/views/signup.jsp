@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>회원가입</h1>
-    <form>
+    <form method="post" action="">
         <label for="user">아이디</label>
         <input type="text" name="user" id="user">
         <label for="password">비밀번호</label>
