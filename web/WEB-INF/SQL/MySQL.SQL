@@ -11,3 +11,9 @@ CREATE TABLE `jdbc`.`chat` (
                                `nickname` VARCHAR(45) NULL,
                                `chat` VARCHAR(45) NULL,
                                PRIMARY KEY (`id`));
+ALTER TABLE `jdbc`.`user`
+DROP COLUMN `id`,
+CHANGE COLUMN `email` `email` VARCHAR(45) NOT NULL ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`email`);
+;
