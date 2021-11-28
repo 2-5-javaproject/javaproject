@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1></h1>
-    <form method="post" action="">
+    <form method="post" action="signupPro.jsp">
         <h3 class="sign_tit">Sign up</h3>
         <input class="sign_id"placeholder="아이디"type="text" name="user" id="user">
         <input class="sign_pw"placeholder="비밀번호"type="text" name="password" id="password">
