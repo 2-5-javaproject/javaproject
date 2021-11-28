@@ -1,6 +1,8 @@
 package com.chatting.Chat;
 
 
+import com.chatting.User.DBConnection;
+
 import java.sql.*;
 
 public class ChatDAO {
@@ -14,7 +16,7 @@ public class ChatDAO {
             String id = "root";
             String password = "2468";
 
-            con = DriverManager.getConnection(URL, id, password);
+            con = DBConnection.getConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
