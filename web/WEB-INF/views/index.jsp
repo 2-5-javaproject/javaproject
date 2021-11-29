@@ -24,8 +24,8 @@
     })(document);
   </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/style.css">
   </head>
   <body>
     <div class="main_box">
@@ -33,11 +33,11 @@
         <img src="#" alt="main imges">
       </div>
       <div class="main_tit_box">
-        <h2 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
+        <h1 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
         <p class="main_txt">Lorem Ipsum is simply dummy text of the prin tingand typesetting industry. Lorem Ipsum</p>
       </div>
-      <a href="signup.html" class="singUP_btn">Sign Up</a>
-      <a href="login.html" class="login_btn">Login</a>
+      <a href="/signup" class="singUP_btn">Sign Up</a>
+      <a href="/login" class="login_btn">Login</a>
     </div>
   </body>
   <script>

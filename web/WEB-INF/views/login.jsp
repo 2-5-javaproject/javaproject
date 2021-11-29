@@ -24,8 +24,8 @@
     })(document);
   </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/style.css">
   </head>
 <body>
  <div class="main_box">
@@ -36,7 +36,7 @@
           <input type="text" class="login_id input_sty" placeholder="ID" name="id" maxlength="15">
           <input type="text" class="login_pw input_sty" placeholder="PW" name="password" maxlength="15">
           <input type="submit" class="login_btn" placeholder="로그인버튼" value="Login">
-          <p>Don’t you have ID? <a href="signup.html">sign up</a></p>
+          <p>Don’t you have ID? <a href="/signup">sign up</a></p>
       </div>
     </form>
   </div>

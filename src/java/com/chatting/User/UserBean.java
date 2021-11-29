@@ -1,4 +1,4 @@
-package com.chatting.User;
+package java.com.chatting.User;
 
 public class UserBean {
     private String email;

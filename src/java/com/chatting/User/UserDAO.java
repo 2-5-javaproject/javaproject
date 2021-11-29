@@ -1,10 +1,7 @@
-package com.chatting.User;
+package java.com.chatting.User;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.lang.reflect.Member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +31,7 @@ public class UserDAO {
 
     public void signup(UserBean user) throws SQLException {
         try {
-            con = DBConnection.getConnection(); // DBConnection의 Connection con 반환
+            con = com.chatting.User.DBConnection.getConnection(); // DBConnection의 Connection con 반환
             con.setAutoCommit(false); // SQL 문장이 실패 시 아무런 데이터도 들어가지 않게 한다.
 
             String email = user.getEmail();
@@ -76,7 +73,7 @@ public class UserDAO {
         ResultSet rs = null;
 
         try {
-            con = DBConnection.getConnection();
+            con = com.chatting.User.DBConnection.getConnection();
             String query = "select password from jdbc.user where " + email + "=?";
             pstmt = con.prepareStatement(query);
             rs = pstmt.executeQuery();

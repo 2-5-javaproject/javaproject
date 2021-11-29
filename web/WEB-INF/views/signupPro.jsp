@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.chatting.User.UserBean" %>
-<%@ page import="com.chatting.User.UserDAO" %>
+<%@ page import="java.com.chatting.User.UserBean" %>
+<%@ page import="java.com.chatting.User.UserDAO" %>
 
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
     <%request.setCharacterEncoding("utf-8");%>
-    <jsp:useBean id="userBean" class="com.chatting.User.UserBean" />
+    <jsp:useBean id="userBean" class="java.com.chatting.User.UserBean" />
     <jsp:setProperty name="userBean" property="*" />
 
     <%
