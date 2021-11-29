@@ -8,10 +8,10 @@ import java.sql.SQLException;
 public class DBConnection {
     public  static Connection getConnection() throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
-        String server = "localhost";
+        String server = "localhost:3306";
         String database = "jdbc";
         String user_name = "root";
-        String password = "1234";
+        String password = "com893811@";
 //        String password = ""; // 본인 패스워드
 
         try {

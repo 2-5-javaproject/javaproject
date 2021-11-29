@@ -2,8 +2,8 @@
 <Context path="/">
     <WatchedResource>WEB_INF/web.xml</WatchedResource>
     <Resource name="jdbc/mysql" auth="Container" type="javax.sql.DataSource"
-              username="root" password="com893811@"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/jdbc/mysql"
+              url="jdbc:mysql://localhost:3306/jdbc"
+              username="root" password="com893811@"
               closeMethod="close" />
 </Context>
