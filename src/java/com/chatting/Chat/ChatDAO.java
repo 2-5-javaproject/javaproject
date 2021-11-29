@@ -1,4 +1,4 @@
-package com.chatting.Chat;
+package java.com.chatting.Chat;
 
 
 import com.chatting.User.DBConnection;
