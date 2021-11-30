@@ -5,7 +5,6 @@
          version="4.0">
     <welcome-file-list>
         <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-<!--        <welcome-file>/WEB-INF/views/signup.jsp</welcome-file>-->
     </welcome-file-list>
     <servlet>
         <servlet-name>index.jsp</servlet-name>
@@ -25,12 +24,13 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>login.jsp</servlet-name>
-        <jsp-file>/WEB-INF/views/login.jsp</jsp-file>
+        <jsp-file>/login.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>login.jsp</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
     <resource-ref>
         <description>connection</description>
         <res-ref-name>jdbc/mysql</res-ref-name>
