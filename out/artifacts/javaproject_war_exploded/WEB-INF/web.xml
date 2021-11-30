@@ -5,9 +5,7 @@
          version="4.0">
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
-<!--        <welcome-file>/WEB-INF/views/signup.jsp</welcome-file>-->
     </welcome-file-list>
-
     <servlet>
         <servlet-name>index.jsp</servlet-name>
         <jsp-file>/index.jsp</jsp-file>
@@ -16,7 +14,6 @@
         <servlet-name>index.jsp</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>signup.jsp</servlet-name>
         <jsp-file>/signup.jsp</jsp-file>
@@ -25,16 +22,14 @@
         <servlet-name>signup.jsp</servlet-name>
         <url-pattern>/signup</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>signupPro.jsp</servlet-name>
-        <url-pattern>/signupPro</url-pattern>
-    </servlet-mapping>
     <servlet>
         <servlet-name>signupPro.jsp</servlet-name>
         <jsp-file>/signupPro.jsp</jsp-file>
     </servlet>
-
+    <servlet-mapping>
+        <servlet-name>signupPro.jsp</servlet-name>
+        <url-pattern>/signupPro</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>login.jsp</servlet-name>
         <jsp-file>/login.jsp</jsp-file>
