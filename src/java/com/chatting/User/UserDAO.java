@@ -31,7 +31,7 @@ public class UserDAO {
 
     public void signup(UserBean user) throws SQLException {
         try {
-            con = com.chatting.User.DBConnection.getConnection(); // DBConnection의 Connection con 반환
+            con = java.com.chatting.User.DBConnection.getConnection(); // DBConnection의 Connection con 반환
             con.setAutoCommit(false); // SQL 문장이 실패 시 아무런 데이터도 들어가지 않게 한다.
 
             String email = user.getEmail();
@@ -73,7 +73,7 @@ public class UserDAO {
         ResultSet rs = null;
 
         try {
-            con = com.chatting.User.DBConnection.getConnection();
+            con = java.com.chatting.User.DBConnection.getConnection();
             String query = "select password from jdbc.user where " + email + "=?";
             pstmt = con.prepareStatement(query);
             rs = pstmt.executeQuery();
