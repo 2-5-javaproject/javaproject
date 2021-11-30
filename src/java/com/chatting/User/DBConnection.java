@@ -8,15 +8,14 @@ import java.sql.SQLException;
 public class DBConnection {
     public  static Connection getConnection() throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
-        String server = "localhost:3306";
-        String database = "jdbc";
+        String server = "jdbc:mysql://localhost:3306/jdbc";
         String user_name = "root";
         String password = "com893811@";
 //        String password = ""; // 본인 패스워드
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://" + server + "/" + database + "?useSSL=false", user_name, password);
+            con = DriverManager.getConnection(server, user_name, password);
         } catch (Exception e) {
             e.printStackTrace();
         }

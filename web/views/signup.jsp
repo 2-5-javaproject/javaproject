@@ -17,8 +17,8 @@
     })(document);
   </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="CSS/reset.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/style.css">
   </head>
 <body>
     <div class="main_box">
@@ -26,12 +26,12 @@
     <form method="post" action="/signupPro">
       <div class="form_box">
         <h3 class="sign_tit">Sign up</h3>
-        <input class="sign_id input_sty"placeholder="ID"type="text" name="user" id="user">
+        <input class="sign_id input_sty"placeholder="ID"type="text" name="email" id="user">
         <input class="sign_pw input_sty"placeholder="PW"type="text" name="password" id="password">
-        <input class="sign_name input_sty"placeholder="name" type="text" name="name" id="name">
+        <input class="sign_name input_sty"placeholder="name" type="text" name="nickname" id="nickname">
         <input class="sign_btn login_btn" placeholder="회원가입"type="submit" value="Sign up">
       </div>
-      </form>
+    </form>
   </div>
 </body>
 <script>

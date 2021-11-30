@@ -1,5 +1,8 @@
 package java.com.chatting.User;
 
+import java.com.chatting.User.DBConnection;
+import java.com.chatting.User.UserBean;
+
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -13,58 +16,88 @@ public class UserDAO {
     private PreparedStatement pstmt;
     private DataSource dataFactory;
 
-    public UserDAO(){
-//        try {
-//            Context ctx = new InitialContext();
-//            Context envContext = (Context) ctx.lookup("java:/comp/env");
-//            dataFactory = (DataSource) envContext.lookup("jdbc/mysql");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    public UserDAO() {
+
     }
-    public static UserDAO getInstance(){
-        if (instance==null){
+
+    public static UserDAO getInstance() {
+        if (instance == null) {
             instance = new UserDAO();
         }
         return instance;
     }
 
-    public void signup(UserBean user) throws SQLException {
+    public String signup(UserBean user) throws SQLException {
+        String result = "";
         try {
-            con = java.com.chatting.User.DBConnection.getConnection(); // DBConnection의 Connection con 반환
+            con = DBConnection.getConnection(); // DBConnection의 Connection con 반환
             con.setAutoCommit(false); // SQL 문장이 실패 시 아무런 데이터도 들어가지 않게 한다.
 
-            String email = user.getEmail();
-            String password = user.getPassword();
-            String nickname = user.getNickname();
-
-            String query = "insert into jdbc.user";
+            String query = "insert into user";
             query += " (email, password, nickname)";
             query += " values(?,?,?)";
 
             pstmt = con.prepareStatement(query);
-            pstmt.setString(1, email);
-            pstmt.setString(2, password);
-            pstmt.setString(3, nickname);
+            pstmt.setString(1, user.getEmail());
+            pstmt.setString(2, user.getPassword());
+            pstmt.setString(3, user.getNickname());
 
             pstmt.executeUpdate();
+            result = "success";
             con.commit();
         } catch (ClassNotFoundException | NamingException | SQLException sqle) {
             con.rollback();
         } finally {
-            try{
+            try {
                 if (pstmt != null) {
                     pstmt.close();
-                    pstmt=null;
+                    pstmt = null;
                 }
                 if (con != null) {
                     con.close();
-                    con=null;
+                    con = null;
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        return result;
+    }
+
+    public String emailCheck(String email) {
+        String result = "";
+        ResultSet rs = null;
+        try {
+            con = DBConnection.getConnection();
+            String query = "select " + email + " from user where email = ?";
+            pstmt = con.prepareStatement(query);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                result = "fail";
+            } else {
+                result = "success";
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                    rs = null;
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                    pstmt = null;
+                }
+                if (con != null) {
+                    con.close();
+                    con = null;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 
     public String login(String email, String password) {
@@ -73,7 +106,7 @@ public class UserDAO {
         ResultSet rs = null;
 
         try {
-            con = java.com.chatting.User.DBConnection.getConnection();
+            con = DBConnection.getConnection();
             String query = "select password from jdbc.user where " + email + "=?";
             pstmt = con.prepareStatement(query);
             rs = pstmt.executeQuery();
@@ -88,33 +121,27 @@ public class UserDAO {
             } else {
                 result = "email fail";
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try{
+            try {
+                if (rs != null) {
+                    rs.close();
+                    rs = null;
+                }
                 if (pstmt != null) {
                     pstmt.close();
-                    pstmt=null;
+                    pstmt = null;
                 }
                 if (con != null) {
                     con.close();
-                    con=null;
+                    con = null;
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-            return result;
         }
-    }
-
-    public void serchUser(UserBean user) {
-        try {
-            con = dataFactory.getConnection();
-            String query = "select " + user.getEmail() + " from jdbc.chat ";
-            pstmt = con.prepareStatement(query);
-            ResultSet rs = pstmt.executeQuery();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return result;
     }
 }
+

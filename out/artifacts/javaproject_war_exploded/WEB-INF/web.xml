@@ -4,35 +4,39 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>/views/index.jsp</welcome-file>
     </welcome-file-list>
+
     <servlet>
         <servlet-name>index.jsp</servlet-name>
-        <jsp-file>/index.jsp</jsp-file>
+        <jsp-file>/views/index.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>index.jsp</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>signup.jsp</servlet-name>
-        <jsp-file>/signup.jsp</jsp-file>
+        <jsp-file>/views/signup.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>signup.jsp</servlet-name>
         <url-pattern>/signup</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>signupPro.jsp</servlet-name>
-        <jsp-file>/signupPro.jsp</jsp-file>
+        <jsp-file>/views/signupPro.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>signupPro.jsp</servlet-name>
         <url-pattern>/signupPro</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>login.jsp</servlet-name>
-        <jsp-file>/login.jsp</jsp-file>
+        <jsp-file>/views/login.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>login.jsp</servlet-name>

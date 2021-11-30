@@ -24,7 +24,6 @@
     <orderEntry type="library" name="javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.27" level="project" />
     <orderEntry type="library" name="WebSocket-1.1" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="JAX-WS-Apache Axis" level="project" />
   </component>
 </module>
