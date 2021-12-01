@@ -1,4 +1,4 @@
-package java.com.chatting.User;
+package com.chatting.User;
 
 import javax.naming.NamingException;
 import java.sql.Connection;

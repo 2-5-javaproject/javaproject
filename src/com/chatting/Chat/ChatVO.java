@@ -1,4 +1,4 @@
-package java.com.chatting.Chat;
+package com.chatting.Chat;
 
 import java.time.LocalDate;
 

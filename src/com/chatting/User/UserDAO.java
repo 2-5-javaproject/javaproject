@@ -1,7 +1,4 @@
-package java.com.chatting.User;
-
-import java.com.chatting.User.DBConnection;
-import java.com.chatting.User.UserBean;
+package com.chatting.User;
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;

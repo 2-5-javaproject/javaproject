@@ -1,4 +1,4 @@
-package java.com.chatting.webSocket;
+package com.chatting.webSocket;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;

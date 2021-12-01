@@ -1,7 +1,7 @@
-package java.com.chatting.Chat;
+package com.chatting.Chat;
 
 
-import java.com.chatting.User.DBConnection;
+import com.chatting.User.DBConnection;
 
 import java.sql.*;
 

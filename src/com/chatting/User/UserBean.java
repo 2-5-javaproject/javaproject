@@ -1,9 +1,13 @@
-package java.com.chatting.User;
+package com.chatting.User;
 
 public class UserBean {
     private String email;
     private String password;
     private String nickname;
+
+    public UserBean(){
+
+    }
 
     public UserBean(String email, String password, String nickname){
         this.email = email;

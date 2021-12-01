@@ -1,15 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-         import="java.com.chatting.User.*"%>
+         import="com.chatting.User.*"%>
 <html>
 <head>
     <title>회원가입 처리</title>
 </head>
 <body>
     <%request.setCharacterEncoding("utf-8");%>
-    <jsp:useBean id="userBean" class="java.com.chatting.User.UserBean" />
-    <jsp:setProperty name="userBean" property="*"/>
-
     <%
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String nickname = request.getParameter("nickname");
+        UserBean userBean = new UserBean(email, password, nickname);
         UserDAO dao = UserDAO.getInstance();
         if (dao.emailCheck(userBean.getEmail()).equals("fail")){
     %>
