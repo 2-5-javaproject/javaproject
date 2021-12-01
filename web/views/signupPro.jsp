@@ -6,11 +6,10 @@
 </head>
 <body>
     <%request.setCharacterEncoding("utf-8");%>
+    <jsp:useBean id="userBean" class="com.chatting.User.UserBean" />
+    <jsp:setProperty property="*" name="userBean"/>
+
     <%
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String nickname = request.getParameter("nickname");
-        UserBean userBean = new UserBean(email, password, nickname);
         UserDAO dao = UserDAO.getInstance();
         if (dao.emailCheck(userBean.getEmail()).equals("fail")){
     %>

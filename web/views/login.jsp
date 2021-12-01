@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 2021-11-19
-  Time: 오후 12:28
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
@@ -30,10 +23,10 @@
 <body>
  <div class="main_box">
     <H1 class="">logo</H1>
-    <form method="post" action="">
+    <form method="post" action="/loginPro">
       <div class="form_box">
           <h3 class="login_tit">Login</h3>
-          <input type="text" class="login_id input_sty" placeholder="ID" name="id" maxlength="15">
+          <input type="text" class="login_id input_sty" placeholder="ID" name="email" maxlength="15">
           <input type="text" class="login_pw input_sty" placeholder="PW" name="password" maxlength="15">
           <input type="submit" class="login_btn" placeholder="로그인버튼" value="Login">
           <p>Don’t you have ID? <a href="/signup">sign up</a></p>

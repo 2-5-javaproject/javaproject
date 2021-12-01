@@ -66,8 +66,9 @@ public class UserDAO {
         ResultSet rs = null;
         try {
             con = DBConnection.getConnection();
-            String query = "select " + email + " from user where email = ?";
+            String query = "select email from user where email = ?";
             pstmt = con.prepareStatement(query);
+            pstmt.setString(1, email);
             rs = pstmt.executeQuery();
             if (rs.next()) {
                 result = "fail";
@@ -104,8 +105,9 @@ public class UserDAO {
 
         try {
             con = DBConnection.getConnection();
-            String query = "select password from jdbc.user where " + email + "=?";
+            String query = "select password from user where email = ?";
             pstmt = con.prepareStatement(query);
+            pstmt.setString(1, email);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
