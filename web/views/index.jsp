@@ -26,7 +26,7 @@
       <img src="../WEB-INF/img/main_img3.png" alt="main imge">
     </div>
     <div class="main_tit_box">
-      <h2 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
+      <h1 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
       <p class="main_txt">Lorem Ipsum is simply dummy text of the prin tingand typesetting industry. Lorem Ipsum</p>
     </div>
       <a href="/signup" class="singUP_btn">Sign Up</a>
