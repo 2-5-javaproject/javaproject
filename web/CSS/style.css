@@ -26,6 +26,7 @@ body{
     text-indent: -99999999em;
     width: 40%;
 }
+
 .main_box>form{
     width: 70%;
     display: flex;
@@ -82,13 +83,33 @@ body{
 
 
 
+
+
 /*index*/
+.index_bg{
+    background: #ffd7ac url(../WEB-INF/img/main_bg.png) no-repeat;
+    background-position: 0 230px;
+}
+.img_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.img_box>img{
+    width: 950px;
+    padding: 80px;
+}
 .main_tit_box{
     font-family: noto-sans, sans-serif;
     font-weight: 900;
     font-style: normal;
     margin-right: 80px;
-    margin-top: 80px
+    margin-top: 80px;
+    cursor:default;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 .main_tit{
     font-size: 120px;
@@ -113,6 +134,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 .singUP_btn{
     right: 386px;
@@ -123,10 +145,15 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 0.58;
+    transition: 0.2s;
+}
+.singUP_btn:hover{
+    opacity: 1;
 }
 .singUP_btn::after{
     content: '';
-    width: 62px;
+    width: 90px;
     height: 2px;
     background: #000;
     margin-top: 2px;
