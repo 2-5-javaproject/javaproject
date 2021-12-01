@@ -5,6 +5,9 @@
     <title>로그아웃 처리</title>
 </head>
 <body>
-
+<%
+    session.invalidate();
+    response.sendRedirect("/index");
+%>
 </body>
 </html>
