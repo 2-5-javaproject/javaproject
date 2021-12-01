@@ -43,6 +43,33 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>loginPro.jsp</servlet-name>
+        <jsp-file>/views/loginPro.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginPro.jsp</servlet-name>
+        <url-pattern>/loginPro</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutPro.jsp</servlet-name>
+        <jsp-file>/views/logoutPro.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutPro.jsp</servlet-name>
+        <url-pattern>/logoutPro</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>chatting.jsp</servlet-name>
+        <jsp-file>/views/chatting.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>chatting.jsp</servlet-name>
+        <url-pattern>/chatting</url-pattern>
+    </servlet-mapping>
+
     <resource-ref>
         <description>connection</description>
         <res-ref-name>jdbc/mysql</res-ref-name>
