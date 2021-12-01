@@ -23,7 +23,7 @@
   <body>
     <div class="main_box index_bg">
     <div class="img_box">
-      <img src="../WEB-INF/img/main_img3.png" alt="main imge">
+      <img src="../img/main_img3.png" alt="main imge">
     </div>
     <div class="main_tit_box">
       <h1 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
