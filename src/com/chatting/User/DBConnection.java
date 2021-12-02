@@ -10,7 +10,7 @@ public class DBConnection {
         Connection con = null;
         String server = "jdbc:mysql://localhost:3306/jdbc";
         String user_name = "root";
-        String password = "1234";
+        String password = "com893811@";
 //        String password = ""; // 본인 패스워드
 
         try {

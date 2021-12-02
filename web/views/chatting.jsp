@@ -22,7 +22,6 @@
   </head>
 <body>
   <div class="main_box">
-<%--    <input type="button" value="로그아웃" onclick="logoutPro()"/>--%>
     <div class="form_bg">
       <form method="post" action="">
         <div class="form_box">
@@ -66,11 +65,6 @@
      --%>
 </body>
 <script type="text/javascript">
-
-    // function logoutPro(){
-    //     location.href="/logoutPro";
-    // }
-
     var textarea = document.getElementById("messageWindow");
     var webSocket = new WebSocket('ws://localhost:8090/javaproject/broadcasting');
     var inputMessage = document.getElementById('inputMessage');
