@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.chatting.Friend.FriendDAO" %>
+<%@ page import="com.chatting.User.UserDAO" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -58,6 +59,7 @@
             <dt>User</dt>
             <div id="userList">
             <%--채팅 접속자 표시--%>
+                <dd class="user">User1</dd>
             </div>
         </dl>
     </div>
@@ -124,15 +126,24 @@
             send();
         }
     }
+
     $(function() {
-        var $user = $("<dd class='user'><a href=''>" + "<%=nickname%>" + "</a></dd>");
+        var $user = $("<dd class='user' onclick='friendAdd()'>" + "<%=nickname%>" + "</dd>");
         $('#userList').append($user);
         $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
     });
+
     $(function() {
         var $friend = $("<dd class='friend'>" + "<%=nickname%>" + "</dd>");
-        $('#userList').append($user);
+        $('#userList').append($friend);
         $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
     });
+    function friendAdd() {
+
+        <%
+            FriendDAO dao = FriendDAO.getInstance();
+            dao.friendAdd(nickname, );
+        %>
+    }
 </script>
 </html>
