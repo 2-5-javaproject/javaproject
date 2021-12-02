@@ -76,7 +76,7 @@
 <%--            </dl>--%>
         </div>
         <div class="send_box">
-            <input class="send_in" placeholder="" type="text" name="text" id="inputMessage">
+            <input class="send_in" placeholder="" type="text" name="text" id="inputMessage" onkeyup="enterkey()">
             <input class="send_btn" placeholder="send" type="submit" value="send" onclick="send()">
         </div>
     </div>
@@ -124,7 +124,7 @@
             return;
         }
         var $chat = $("<dl class='chat_box chat_box_you'> " +
-            "<dt>" + "<%;String s = (String) session.getAttribute("sessinID"); %><%=s%> " + "</dt>" +
+            "<dt>" + "<%;String s = (String) session.getAttribute("sessinID");%><%=s%> " + "</dt>" +
             "<dd class='chat'>" + msg + "</dd>" +
             "</dl>"
         )
@@ -132,6 +132,12 @@
         webSocket.send(msg);
         inputMessage.value = "";
         $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight + 20);
+    }
+
+    function enterkey() {
+        if(window.event.keyCode == 13) {
+            send();
+        }
     }
 </script>
 </html>

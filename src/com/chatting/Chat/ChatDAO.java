@@ -1,6 +1,5 @@
 package com.chatting.Chat;
 
-
 import com.chatting.User.DBConnection;
 
 import java.sql.*;
