@@ -21,14 +21,14 @@
   <link rel="stylesheet" href="../CSS/style.css">
   </head>
   <body>
-    <div class="main_box">
-      <div class="img_box">
-        <img src="#" alt="main imges">
-      </div>
-      <div class="main_tit_box">
-        <h1 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
-        <p class="main_txt">Lorem Ipsum is simply dummy text of the prin tingand typesetting industry. Lorem Ipsum</p>
-      </div>
+    <div class="main_box index_bg">
+    <div class="img_box">
+      <img src="../img/main_img3.png" alt="main imge">
+    </div>
+    <div class="main_tit_box">
+      <h1 class="main_tit">C<span class="high_color">HA</span>T<br/><span class="">JAVA PRO</span></h1>
+      <p class="main_txt">Lorem Ipsum is simply dummy text of the prin tingand typesetting industry. Lorem Ipsum</p>
+    </div>
       <a href="/signup" class="singUP_btn">Sign Up</a>
       <a href="/login" class="login_btn">Login</a>
     </div>
