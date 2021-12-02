@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page import="com.chatting.Friend.FriendDAO" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -91,10 +91,6 @@
         console.log("연결 성공");
     }
 
-    function onError(event) {
-        alert(event.data);
-    }
-
     function onMessage(event) {
         var msg = event.data;
 
@@ -130,6 +126,11 @@
     }
     $(function() {
         var $user = $("<dd class='user'>" + "<%=nickname%>" + "</dd>");
+        $('#userList').append($user);
+        $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
+    });
+    $(function() {
+        var $friend = $("<dd class='friend'>" + "<%=nickname%>" + "</dd>");
         $('#userList').append($user);
         $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
     });
