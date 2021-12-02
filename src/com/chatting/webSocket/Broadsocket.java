@@ -14,6 +14,10 @@ public class Broadsocket{
 
     private static List<Session> clients = Collections.synchronizedList(new ArrayList<>());
 
+    public List<Session> getUserList(){
+        return clients;
+    }
+
     @OnMessage // 웹소켓 endpoint가 메시지를 수신하면 @OnMessage 어노테이션이 붙은 매서드 호출
     public void onMessage(String message, Session session) throws IOException {
 

@@ -1,5 +1,5 @@
-<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
+<%;String nickname = (String) session.getAttribute("sessinID");%>
 <div class="main_box">
     <div class="form_bg">
         <form method="post" action="">
@@ -51,29 +52,18 @@
         </form>
         <dl class="user_box">
             <dt>Friend</dt>
-            <dd class="friend">Friend_1</dd>
+            <div id="friendList">
+                <dd class="friend">Friend_1</dd>
+            </div>
             <dt>User</dt>
-            <dd class="user">Friend_1</dd>
+            <div id="userList">
+            <%--채팅 접속자 표시--%>
+            </div>
         </dl>
     </div>
     <div class="chat_bg">
         <div class="chat_area" id="chat-container">
-<%--            <dl class="chat_box chat_box_you">--%>
-<%--                <dt>Friend_1</dt>--%>
-<%--                <dd class="chat">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum--%>
-<%--                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a--%>
-<%--                    galley of type and scrambled it to make a type specimen book.--%>
-<%--                </dd>--%>
-<%--                <dd class="chat">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</dd>--%>
-<%--            </dl>--%>
-<%--            <dl class="chat_box chat_box_me">--%>
-<%--                <dt>Friend_1</dt>--%>
-<%--                <dd class="chat">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum--%>
-<%--                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a--%>
-<%--                    galley of type and scrambled it to make a type specimen book.--%>
-<%--                </dd>--%>
-<%--                <dd class="chat">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</dd>--%>
-<%--            </dl>--%>
+        <%--채팅 공간--%>
         </div>
         <div class="send_box">
             <input class="send_in" placeholder="" type="text" name="text" id="inputMessage" onkeyup="enterkey()">
@@ -86,7 +76,6 @@
     var textarea = document.getElementById("messageWindow");
     var inputMessage = document.getElementById('inputMessage');
     var webSocket = new WebSocket('ws://localhost:8090/javaproject/WebSocket');
-    <% %>
 
     webSocket.onopen = function (event) {
         onOpen(event)
@@ -123,8 +112,8 @@
         if (msg == '') {
             return;
         }
-        var $chat = $("<dl class='chat_box chat_box_you'> " +
-            "<dt>" + "<%;String s = (String) session.getAttribute("sessinID");%><%=s%> " + "</dt>" +
+        var $chat = $("<dl class='chat_box chat_box_me'> " +
+            "<dt>" + "<%=nickname%>" + "</dt>" +
             "<dd class='chat'>" + msg + "</dd>" +
             "</dl>"
         )
@@ -139,5 +128,10 @@
             send();
         }
     }
+    $(function() {
+        var $user = $("<dd class='user'>" + "<%=nickname%>" + "</dd>");
+        $('#userList').append($user);
+        $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
+    });
 </script>
 </html>

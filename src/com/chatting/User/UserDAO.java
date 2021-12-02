@@ -144,7 +144,6 @@ public class UserDAO {
     }
 
     public String findOfNickname(String email) {
-        String result = "";
         ResultSet rs = null;
         String nickname = "none";
         try {
@@ -153,7 +152,9 @@ public class UserDAO {
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, email);
             rs = pstmt.executeQuery();
-            nickname = rs.getString(1);
+            if (rs.next()) {
+                nickname = rs.getString(1);
+            }
         } catch(Exception e) {
             e.printStackTrace();
         } finally {

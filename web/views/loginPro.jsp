@@ -14,7 +14,7 @@
         String check = dao.login(email, password);
 
         if(check.equals("success")){
-            session.setAttribute("sessinID", email); //nickname
+            session.setAttribute("sessinID", nickname); //nickname
     %>
     <script>
         alert("로그인 성공");
