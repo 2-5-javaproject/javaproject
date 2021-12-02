@@ -11,7 +11,6 @@ public class UserDAO {
     private static UserDAO instance;
     private Connection con;
     private PreparedStatement pstmt;
-    private DataSource dataFactory;
 
     public UserDAO() {
 

@@ -125,7 +125,7 @@
         }
     }
     $(function() {
-        var $user = $("<dd class='user'>" + "<%=nickname%>" + "</dd>");
+        var $user = $("<dd class='user'><a href=''>" + "<%=nickname%>" + "</a></dd>");
         $('#userList').append($user);
         $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
     });
