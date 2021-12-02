@@ -1,3 +1,4 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -85,6 +86,7 @@
     var textarea = document.getElementById("messageWindow");
     var inputMessage = document.getElementById('inputMessage');
     var webSocket = new WebSocket('ws://localhost:8090/javaproject/WebSocket');
+    <% %>
 
     webSocket.onopen = function (event) {
         onOpen(event)
@@ -107,7 +109,7 @@
     function onMessage(event) {
         var msg = event.data;
 
-        var $chat = $("<dl class='chat_box_me'> + " +
+        var $chat = $("<dl class='chat_box chat_box_you'> + " +
             "<dt>상대 이름</dt>" +
             "<dd>" + msg + "</dd>" +
             "</dl>"
@@ -121,9 +123,11 @@
         if (msg == '') {
             return;
         }
-        var $chat = $("<dl class='chat_box_you'> + " +
-            "<dt>" + <%session.getAttribute("sessinID");%> +"</dt>" +
-            "<dd>" + msg + "</dd>" +
+        var $chat = $("<dl class='chat_box chat_box_you'> " +
+            "<dt>" + "<% PrintWriter writer = response.getWriter();
+            String s = (String) session.getAttribute("sessinID");
+            writer.println(s); %> " + "</dt>" +
+            "<dd class='chat'>" + msg + "</dd>" +
             "</dl>"
         )
         $('#chat-container').append($chat);
@@ -131,11 +135,5 @@
         inputMessage.value = "";
         $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight + 20);
     }
-</script>
-<script>
-
-</script>
-<script>
-    <%--   Jquery 공간--%>
 </script>
 </html>
