@@ -142,5 +142,39 @@ public class UserDAO {
         }
         return result;
     }
+
+    public String findOfNickname(String email) {
+        String result = "";
+        ResultSet rs = null;
+        String nickname = "none";
+        try {
+            con = DBConnection.getConnection();
+            String query = "select nickname from user where email = ?";
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, email);
+            rs = pstmt.executeQuery();
+            nickname = rs.getString(1);
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                    rs = null;
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                    pstmt = null;
+                }
+                if (con != null) {
+                    con.close();
+                    con = null;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return nickname;
+    }
 }
 

@@ -7,14 +7,14 @@
 <body>
     <%request.setCharacterEncoding("utf-8");%>
     <%
+        UserDAO dao = UserDAO.getInstance();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-        UserDAO dao = UserDAO.getInstance();
+        String nickname = dao.findOfNickname(email);
         String check = dao.login(email, password);
 
         if(check.equals("success")){
-            session.setAttribute("sessinID", email);
+            session.setAttribute("sessinID", email); //nickname
     %>
     <script>
         alert("로그인 성공");
