@@ -30,16 +30,19 @@ public class FriendDAO {
 
     public void friendAdd(String myName, String friendName) throws SQLException {
         try {
+            if (myName == friendName){
+                return;
+            }
             con = DBConnection.getConnection();
             con.setAutoCommit(false);
 
-            String query = "insert into fiend";
-            query += " (nickname, friendname)";
+            String query = "insert into friend";
+            query += " (friendname, nickname)";
             query += " values(?,?)";
 
             pstmt = con.prepareStatement(query);
-            pstmt.setString(1, myName);
-            pstmt.setString(2, friendName);
+            pstmt.setString(1, friendName);
+            pstmt.setString(2, myName);
 
             pstmt.executeUpdate();
             con.commit();

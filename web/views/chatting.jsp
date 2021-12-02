@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.chatting.Friend.FriendDAO" %>
-<%@ page import="com.chatting.User.UserDAO" %>
+<%@ page import="com.chatting.Friend.*" %>
+<%@ page import="java.util.List" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -42,6 +43,10 @@
 </head>
 <body>
 <%;String nickname = (String) session.getAttribute("sessinID");%>
+<%request.setCharacterEncoding("utf-8");%>
+<jsp:useBean id="friend" class="com.chatting.Friend.FriendVO" />
+<jsp:setProperty property="*" name="friend"/>
+<%FriendDAO dao = FriendDAO.getInstance();%>
 <div class="main_box">
     <div class="form_bg">
         <form method="post" action="">
@@ -52,14 +57,20 @@
             </div>
         </form>
         <dl class="user_box">
+            <%--친구 표시--%>
             <dt>Friend</dt>
             <div id="friendList">
-                <dd class="friend">Friend_1</dd>
+
             </div>
+            <%--채팅 접속자 표시--%>
             <dt>User</dt>
             <div id="userList">
-            <%--채팅 접속자 표시--%>
-                <dd class="user">User1</dd>
+                <div class="user-wrap">
+                    <dd class="user"><a href="#" onclick="friendAdd(this)">User1</a></dd>
+                </div>
+                <div class="user-wrap">
+                    <dd class="user"><a href="#" onclick="friendAdd(this)">User2</a></dd>
+                </div>
             </div>
         </dl>
     </div>
@@ -128,21 +139,26 @@
     }
 
     $(function() {
-        var $user = $("<dd class='user' onclick='friendAdd()'>" + "<%=nickname%>" + "</dd>");
+        var $user = $("<div class='user-wrap'><dd class='user' id='user'><a href='#' onclick='friendAdd(this)'>" + "<%=nickname%>" + "</a></dd></div>");
         $('#userList').append($user);
         $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
     });
 
-    $(function() {
-        var $friend = $("<dd class='friend'>" + "<%=nickname%>" + "</dd>");
-        $('#userList').append($friend);
-        $('#userList').scrollTop($('#userList')[0].scrollHeight + 10);
+    $(function friendList() {
+        var friendList = [];
+        <%List<String> friendList = dao.friendList(friend.getFriendName());%>
+        <%for(int i=0; i < friendList.size(); i++) {%>
+            friendList[<%=i%>] = <%=friendList.get(i)%>;
+            console.log(friendList[i]);
+        <%}%>
     });
-    function friendAdd() {
 
+    function friendAdd(user) {
+        var innerText = $(user).text();
+        var url = '/chatting?friendName=' + encodeURI(innerText);
+        window.location.href = url;
         <%
-            FriendDAO dao = FriendDAO.getInstance();
-            dao.friendAdd(nickname, );
+            dao.friendAdd(nickname, friend.getFriendName());
         %>
     }
 </script>

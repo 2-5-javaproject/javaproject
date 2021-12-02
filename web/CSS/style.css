@@ -224,6 +224,7 @@ dd{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 7px;
 }
 .chat_bg{
     width: 70%; height: 100%;
