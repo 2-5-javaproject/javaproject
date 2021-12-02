@@ -124,9 +124,7 @@
             return;
         }
         var $chat = $("<dl class='chat_box chat_box_you'> " +
-            "<dt>" + "<% PrintWriter writer = response.getWriter();
-            String s = (String) session.getAttribute("sessinID");
-            writer.println(s); %> " + "</dt>" +
+            "<dt>" + "<%;String s = (String) session.getAttribute("sessinID"); %><%=s%> " + "</dt>" +
             "<dd class='chat'>" + msg + "</dd>" +
             "</dl>"
         )
