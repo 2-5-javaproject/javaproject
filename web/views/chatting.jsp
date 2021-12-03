@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.chatting.Friend.*" %>
 <%@ page import="java.util.List" %>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -76,7 +75,7 @@
     </div>
     <div class="chat_bg">
         <div class="chat_area" id="chat-container">
-        <%--채팅 공간--%>
+            <%--채팅 공간--%>
         </div>
         <div class="send_box">
             <input class="send_in" placeholder="" type="text" name="text" id="inputMessage" onkeyup="enterkey()">
@@ -148,8 +147,8 @@
         var friendList = [];
         <%List<String> friendList = dao.friendList(friend.getFriendName());%>
         <%for(int i=0; i < friendList.size(); i++) {%>
-            friendList[<%=i%>] = <%=friendList.get(i)%>;
-            console.log(friendList[i]);
+        friendList[<%=i%>] = <%=friendList.get(i)%>;
+        console.log(friendList[i]);
         <%}%>
     });
 
